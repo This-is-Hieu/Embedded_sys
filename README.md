@@ -11,6 +11,10 @@ Dự án này xây dựng một hệ thống giám sát sức khỏe sử dụng
 - Tương thích với chế độ **multitasking (FreeRTOS)** trên ESP32
 
 ---
+## TÁC GIẢ
+
+- Nguyễn Trung Hiếu - 20225188
+- Giảng viên hướng dẫn: Ths. Nguyễn Đức Tiến
 
 ## 📦 Phần Cứng
 
@@ -25,6 +29,7 @@ Dự án này xây dựng một hệ thống giám sát sức khỏe sử dụng
 **Kết nối I2C:**
 - SDA: GPIO 25  
 - SCL: GPIO 26
+- Do cả MAX30102 và AHT20 đều sử dụng giao tiếp I2C, nên có thể kết nối song song hai cảm biến này trên cùng hai chân SDA (GPIO 25) và SCL (GPIO 26) của ESP32. Chuẩn I2C cho phép nhiều thiết bị dùng chung bus, mỗi thiết bị sẽ có địa chỉ riêng biệt.
 
 **Servo:**
 - Chân điều khiển servo: GPIO 21
@@ -60,6 +65,7 @@ Cài đặt các thư viện sau:
 ### Serial
 
 - **Baudrate**: `115200`
+- Có thể xem log qua Serial Monitor của PlatformIO.
 
 ---
 ### Chọn chế độ giao tiếp
@@ -71,9 +77,8 @@ Cài đặt các thư viện sau:
 ---
 
 ### Giao tiếp WiFi (nếu bật `#define ENABLE_WIFI`)
-
-- SSID: `AP`  
-- Password: `12345678`
+- Ở đây ESP32 hoạt động ở chế độ station(STA) kết nối với 1 mạng WiFi có sẵn 
+- Đặt băng tần 2.4GHz do ESP32 chỉ tương thích với băng tần trên
 - Trên Serial hiện địa chỉ IP
 - Truy cập `http://<IP>/data` để lấy dữ liệu dạng JSON:
 ```json
@@ -83,12 +88,18 @@ Cài đặt các thư viện sau:
   "Temp": 26.3,
   "Hum": 58.7
 }
+-Có thể gửi 1 trong 3 lệnh trong Serial
+| Lệnh    | Chức năng                               |
+| ------- | --------------------------------------- |
+| `GYMAX` | Bật/tắt cảm biến nhịp tim MAX30102      |
+| `AHT`   | Bật/tắt cảm biến nhiệt độ - độ ẩm AHT20 |
+| `0-180` | Xoay servo đến góc tương ứng            |
 ```
 ---
 ### Giao tiếp Bluetooth (Nếu bật #define `ENABLE_BLUETOOTH`)
 
 -Sử dụng app Bluetooth Serial Terminal
--Kết nối với esp32
+-Kết nối với ESP32
 -Trên terminal sẽ hiện các thông số
 -Có thể gửi 1 trong 3 lệnh
 | Lệnh    | Chức năng                               |
