@@ -9,7 +9,7 @@ Dự án này xây dựng một hệ thống giám sát sức khỏe sử dụng
 - Gửi dữ liệu dưới dạng **JSON**
 - Nhận lệnh để điều khiển **servo** hoặc bật/tắt cảm biến
 - Tương thích với chế độ **multitasking (FreeRTOS)** trên ESP32
-- ![Ảnh: ](https://drive.google.com/file/d/1-KitLC-DQziISnQFY6HpKRX0R2QnwW1N/view?usp=sharing)
+- ![Ảnh: ](https://github.com/This-is-Hieu/Embedded_sys/blob/af5a2199e47e27869390a8bf4f4bad2b2379bbc0/1.jpg)
 ---
 ## TÁC GIẢ
 
