@@ -9,7 +9,7 @@ Dự án này xây dựng một hệ thống giám sát sức khỏe sử dụng
 - Gửi dữ liệu dưới dạng **JSON**
 - Nhận lệnh để điều khiển **servo** hoặc bật/tắt cảm biến
 - Tương thích với chế độ **multitasking (FreeRTOS)** trên ESP32
-- Ảnh: (https://drive.google.com/file/d/1-KitLC-DQziISnQFY6HpKRX0R2QnwW1N/view?usp=sharing)
+- ![Ảnh: ](https://drive.google.com/file/d/1-KitLC-DQziISnQFY6HpKRX0R2QnwW1N/view?usp=sharing)
 ---
 ## TÁC GIẢ
 
@@ -88,14 +88,16 @@ Cài đặt các thư viện sau:
   "Temp": 26.3,
   "Hum": 58.7
 }
+```
 -Có thể gửi 1 trong 3 lệnh trong Serial
 | Lệnh    | Chức năng                               |
 | ------- | --------------------------------------- |
 | `GYMAX` | Bật/tắt cảm biến nhịp tim MAX30102      |
 | `AHT`   | Bật/tắt cảm biến nhiệt độ - độ ẩm AHT20 |
 | `0-180` | Xoay servo đến góc tương ứng            |
--[Minh họa sử dụng Wifi] (https://github.com/This-is-Hieu/Embedded_sys/blob/main/2.mp4)
-```
+
+- [Minh họa sử dụng Wifi](https://github.com/This-is-Hieu/Embedded_sys/blob/main/2.mp4)
+
 ---
 ### Giao tiếp Bluetooth (Nếu bật #define `ENABLE_BLUETOOTH`)
 
@@ -108,4 +110,5 @@ Cài đặt các thư viện sau:
 | `GYMAX` | Bật/tắt cảm biến nhịp tim MAX30102      |
 | `AHT`   | Bật/tắt cảm biến nhiệt độ - độ ẩm AHT20 |
 | `0-180` | Xoay servo đến góc tương ứng            |
--[Minh họa sử dụng Bluetooth](https://drive.google.com/file/d/1-KitLC-DQziISnQFY6HpKRX0R2QnwW1N/view?usp=sharing)
+
+- [Minh họa sử dụng Bluetooth](https://drive.google.com/file/d/1-KitLC-DQziISnQFY6HpKRX0R2QnwW1N/view?usp=sharing)
